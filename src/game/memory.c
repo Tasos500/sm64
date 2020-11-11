@@ -21,7 +21,7 @@ struct MainPoolState {
     u32 freeSpace;
     struct MainPoolBlock *listHeadL;
     struct MainPoolBlock *listHeadR;
-    struct MainPoolState *prev;
+    void *prev;
 };
 
 struct MainPoolBlock {
@@ -29,15 +29,15 @@ struct MainPoolBlock {
     struct MainPoolBlock *next;
 };
 
-struct MemoryBlock {
-    struct MemoryBlock *next;
-    u32 size;
-};
-
 struct MemoryPool {
     u32 totalSpace;
     struct MemoryBlock *firstBlock;
-    struct MemoryBlock freeList;
+    struct MemoryBlock *freeList;
+};
+
+struct MemoryBlock {
+    struct MemoryBlock *next;
+    u32 size;
 };
 
 extern uintptr_t sSegmentTable[32];
@@ -90,9 +90,8 @@ void *virtual_to_segmented(u32 segment, const void *addr) {
 void move_segment_table_to_dmem(void) {
     s32 i;
 
-    for (i = 0; i < 16; i++) {
+    for (i = 0; i < 16; i++)
         gSPSegment(gDisplayListHead++, i, sSegmentTable[i]);
-    }
 }
 #else
 void *segmented_to_virtual(const void *addr) {
@@ -158,8 +157,7 @@ void *main_pool_alloc(u32 size, u32 side) {
 
 /**
  * Free a block of memory that was allocated from the pool. The block must be
- * the most recently allocated block from its end of the pool, otherwise all
- * newer blocks are freed as well.
+ * the most recently allocated block from its end of the pool.
  * Return the amount of free space left in the pool.
  */
 u32 main_pool_free(void *addr) {
@@ -214,7 +212,7 @@ u32 main_pool_available(void) {
  * in the pool.
  */
 u32 main_pool_push_state(void) {
-    struct MainPoolState *prevState = gMainPoolState;
+    void *prevState = gMainPoolState;
     u32 freeSpace = sPoolFreeSpace;
     struct MainPoolBlock *lhead = sPoolListHeadL;
     struct MainPoolBlock *rhead = sPoolListHeadR;
@@ -436,13 +434,13 @@ struct MemoryPool *mem_pool_init(u32 size, u32 side) {
     struct MemoryPool *pool = NULL;
 
     size = ALIGN4(size);
-    addr = main_pool_alloc(size + sizeof(struct MemoryPool), side);
+    addr = main_pool_alloc(size + ALIGN16(sizeof(struct MemoryPool)), side);
     if (addr != NULL) {
         pool = (struct MemoryPool *) addr;
 
         pool->totalSpace = size;
-        pool->firstBlock = (struct MemoryBlock *) ((u8 *) addr + sizeof(struct MemoryPool));
-        pool->freeList.next = (struct MemoryBlock *) ((u8 *) addr + sizeof(struct MemoryPool));
+        pool->firstBlock = (struct MemoryBlock *) ((u8 *) addr + ALIGN16(sizeof(struct MemoryPool)));
+        pool->freeList = (struct MemoryBlock *) ((u8 *) addr + ALIGN16(sizeof(struct MemoryPool)));
 
         block = pool->firstBlock;
         block->next = NULL;
@@ -455,7 +453,7 @@ struct MemoryPool *mem_pool_init(u32 size, u32 side) {
  * Allocate from a memory pool. Return NULL if there is not enough space.
  */
 void *mem_pool_alloc(struct MemoryPool *pool, u32 size) {
-    struct MemoryBlock *freeBlock = &pool->freeList;
+    struct MemoryBlock *freeBlock = (struct MemoryBlock *) &pool->freeList;
     void *addr = NULL;
 
     size = ALIGN4(size) + sizeof(struct MemoryBlock);
@@ -483,20 +481,20 @@ void *mem_pool_alloc(struct MemoryPool *pool, u32 size) {
  */
 void mem_pool_free(struct MemoryPool *pool, void *addr) {
     struct MemoryBlock *block = (struct MemoryBlock *) ((u8 *) addr - sizeof(struct MemoryBlock));
-    struct MemoryBlock *freeList = pool->freeList.next;
+    struct MemoryBlock *freeList = pool->freeList;
 
-    if (pool->freeList.next == NULL) {
-        pool->freeList.next = block;
+    if (pool->freeList == NULL) {
+        pool->freeList = block;
         block->next = NULL;
     } else {
-        if (block < pool->freeList.next) {
-            if ((u8 *) pool->freeList.next == (u8 *) block + block->size) {
+        if (block < pool->freeList) {
+            if ((u8 *) pool->freeList == (u8 *) block + block->size) {
                 block->size += freeList->size;
                 block->next = freeList->next;
-                pool->freeList.next = block;
+                pool->freeList = block;
             } else {
-                block->next = pool->freeList.next;
-                pool->freeList.next = block;
+                block->next = pool->freeList;
+                pool->freeList = block;
             }
         } else {
             while (freeList->next != NULL) {

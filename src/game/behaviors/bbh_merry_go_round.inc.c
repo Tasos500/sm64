@@ -88,7 +88,7 @@ void bhv_merry_go_round_loop(void) {
     }
 
     // Rotate the merry-go-round and play appropriate music if it's not stopped.
-    if (!o->oMerryGoRoundStopped) {
+    if (o->oMerryGoRoundStopped == FALSE) {
         o->oAngleVelYaw = 0x80;
         o->oMoveAngleYaw += o->oAngleVelYaw;
         o->oFaceAngleYaw += o->oAngleVelYaw;

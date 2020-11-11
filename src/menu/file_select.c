@@ -42,7 +42,7 @@ static s16 sSoundTextX;
 static s16 sSoundTextY;
 #endif
 
-//! @Bug (UB Array Access) For EU, more buttons were added than the array was extended.
+//! @Bug (UB Array Access) For PAL, more buttons were added than the array was extended.
 //! This causes no currently known issues on console (as the other variables are not changed
 //! while this is used) but can cause issues with other compilers.
 #ifdef VERSION_EU
@@ -118,7 +118,7 @@ static s16 sMainMenuTimer = 0;
 // 0: gSoundMode = 0 (Stereo) | 1: gSoundMode = 3 (Mono) | 2: gSoundMode = 1 (Headset)
 static s8 sSoundMode = 0;
 
-// Active language for EU arrays, values defined similar to sSoundMode
+// Active language for PAL arrays, values defined similar to sSoundMode
 // 0: English | 1: French | 2: German
 #ifdef VERSION_EU
 static s8 sLanguageMode = LANGUAGE_ENGLISH;
@@ -139,7 +139,7 @@ static s8 sSelectedFileNum = 0;
 // coin high score, 1 for high score across all files.
 static s8 sScoreFileCoinScoreMode = 0;
 
-// In EU, if no save file exists, open the language menu so the user can find it.
+// In PAL, if no save file exists, open the language menu so the user can find it.
 #ifdef VERSION_EU
 static s8 sOpenLangSettings = FALSE;
 #endif
@@ -169,7 +169,7 @@ static unsigned char textEraseFileButton[][16] = { {TEXT_ERASE_FILE}, {TEXT_ERAS
 #endif
 
 #ifndef VERSION_EU
-static unsigned char textSoundModes[][8] = { { TEXT_STEREO }, { TEXT_MONO }, { TEXT_HEADSET } };
+static unsigned char textSoundModes[][10] = { { TEXT_STEREO }, { TEXT_MONO }, { TEXT_HEADSET } };
 #endif
 
 static unsigned char textMarioA[] = { TEXT_FILE_MARIO_A };
@@ -1708,7 +1708,7 @@ void print_save_file_star_count(s8 fileIndex, s16 x, s16 y) {
     s16 starCount;
 
     if (save_file_exists(fileIndex) == TRUE) {
-        starCount = save_file_get_total_star_count(fileIndex, COURSE_MIN - 1, COURSE_MAX - 1);
+        starCount = save_file_get_total_star_count(fileIndex, 0, 24);
         // Print star icon
         print_hud_lut_string(HUD_LUT_GLOBAL, x, y, starIcon);
         // If star count is less than 100, print x icon and move
@@ -1727,7 +1727,7 @@ void print_save_file_star_count(s8 fileIndex, s16 x, s16 y) {
 }
 
 #if defined(VERSION_JP) || defined(VERSION_SH)
-    #define SELECT_FILE_X 96
+    #define SELECT_FILE_X 75
     #define SCORE_X 50
     #define COPY_X 115
     #define ERASE_X 180
@@ -1737,10 +1737,10 @@ void print_save_file_star_count(s8 fileIndex, s16 x, s16 y) {
     #define MARIOTEXT_X1 92
     #define MARIOTEXT_X2 207
 #elif VERSION_US
-    #define SELECT_FILE_X 93
-    #define SCORE_X 52
-    #define COPY_X 117
-    #define ERASE_X 177
+    #define SELECT_FILE_X 73
+    #define SCORE_X 55
+    #define COPY_X 100
+    #define ERASE_X 168
     #define SOUNDMODE_X1 sSoundTextX
     #define SAVEFILE_X1 92
     #define SAVEFILE_X2 209
@@ -1844,7 +1844,7 @@ void print_main_lang_strings(void) {
 #define CHECK_FILE_X 90
 #define NOSAVE_DATA_X1 90
 #else
-#define CHECK_FILE_X 95
+#define CHECK_FILE_X 71
 #define NOSAVE_DATA_X1 99
 #endif
 
@@ -1881,9 +1881,9 @@ void score_menu_display_message(s8 messageID) {
     #define COPYFILE_X1  centeredX
     #define ERASEFILE_X1 centeredX
 #else
-    #define RETURN_X     44
-    #define COPYFILE_X1  135
-    #define ERASEFILE_X1 231
+    #define RETURN_X     35
+    #define COPYFILE_X1  132
+    #define ERASEFILE_X1 234
 #endif
 
 #ifdef VERSION_EU
@@ -1971,11 +1971,11 @@ void print_score_menu_strings(void) {
     #define COPYCOMPLETE_X centeredX
     #define SAVE_EXISTS_X1 centeredX
 #else
-    #define NOFILE_COPY_X  119
-    #define COPY_FILE_X    104
+    #define NOFILE_COPY_X  89
+    #define COPY_FILE_X    59
     #define COPYIT_WHERE_X 109
     #define NOSAVE_DATA_X2 101
-    #define COPYCOMPLETE_X 110
+    #define COPYCOMPLETE_X 89
     #define SAVE_EXISTS_X1 110
 #endif
 
@@ -2082,8 +2082,8 @@ void copy_menu_update_message(void) {
     #define VIEWSCORE_X1 centeredX
     #define ERASEFILE_X2 centeredX
 #else
-    #define VIEWSCORE_X1 128
-    #define ERASEFILE_X2 230
+    #define VIEWSCORE_X1 124
+    #define ERASEFILE_X2 234
 #endif
 
 /**
@@ -2232,10 +2232,10 @@ void print_erase_menu_prompt(s16 x, s16 y) {
     #define MARIO_ERASED_X   centeredX
     #define SAVE_EXISTS_X2   centeredX
 #else
-    #define ERASE_FILE_X     98
+    #define ERASE_FILE_X     65
     #define NOSAVE_DATA_X3   100
     #define MARIO_ERASED_VAR 6
-    #define MARIO_ERASED_X   100
+    #define MARIO_ERASED_X   87
     #define SAVE_EXISTS_X2   100
 #endif
 
@@ -2335,7 +2335,7 @@ void erase_menu_update_message(void) {
 #define COPYFILE_X2 223
 #else
 #define VIEWSCORE_X2 127
-#define COPYFILE_X2 233
+#define COPYFILE_X2 230
 #endif
 
 /**
@@ -2398,7 +2398,7 @@ void print_erase_menu_strings(void) {
 #if defined(VERSION_JP) || defined(VERSION_SH)
     #define SOUND_HUD_X 96
 #elif VERSION_US
-    #define SOUND_HUD_X 88
+    #define SOUND_HUD_X 84
 #endif
 
 /**
@@ -2495,8 +2495,7 @@ void print_score_file_castle_secret_stars(s8 fileIndex, s16 x, s16 y) {
     // Print "[star] x"
     print_menu_generic_string(x, y, textStarX);
     // Print number of castle secret stars
-    int_to_str(save_file_get_total_star_count(fileIndex, COURSE_BONUS_STAGES - 1, COURSE_MAX - 1),
-               secretStarsText);
+    int_to_str(save_file_get_total_star_count(fileIndex, 15, 24), secretStarsText);
 #ifdef VERSION_EU
     print_menu_generic_string(x + 20, y, secretStarsText);
 #else

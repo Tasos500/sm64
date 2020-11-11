@@ -63,10 +63,10 @@ enum DialogMark { DIALOG_MARK_NONE = 0, DIALOG_MARK_DAKUTEN = 1, DIALOG_MARK_HAN
 
 #if !defined(VERSION_JP) && !defined(VERSION_SH)
 u8 gDialogCharWidths[256] = { // TODO: Is there a way to auto generate this?
-    7,  7,  7,  7,  7,  7,  7,  7,  7,  7,  6,  6,  6,  6,  6,  6,
-    6,  6,  5,  6,  6,  5,  8,  8,  6,  6,  6,  6,  6,  5,  6,  6,
-    8,  7,  6,  6,  6,  5,  5,  6,  5,  5,  6,  5,  4,  5,  5,  3,
-    7,  5,  5,  5,  6,  5,  5,  5,  5,  5,  7,  7,  5,  5,  4,  4,
+    7,  7,  7,  7,  7,  7,  7,  7,  7,  7,  6,  6,  6,  7,  6,  6,
+    6,  6,  5,  6,  7,  8,  8,  7,  6,  7,  6,  6,  6,  6,  7,  7,
+    8,  6,  6,  6,  6,  6,  5,  6,  4,  6,  6,  5,  4,  6,  6,  6,
+    7,  6,  5,  7,  5,  6,  6,  6,  7,  6,  7,  8,  6,  5,  4,  4,
     8,  6,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
     8,  8,  8,  8,  7,  7,  6,  7,  7,  0,  0,  0,  0,  0,  0,  0,
 #ifdef VERSION_EU
@@ -77,9 +77,9 @@ u8 gDialogCharWidths[256] = { // TODO: Is there a way to auto generate this?
     0,  4,  4,  0,  0,  5,  5,  0,  0,  0,  0,  0,  0,  0,  0,  0,
 #else
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  4,
-    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
-    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
-    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  5,  6,
+    6,  7,  8,  7,  7,  8,  7,  6,  5,  6,  4,  5,  6,  8,  6,  8,
+    6,  0,  6,  8,  0,  0,  0,  0,  0,  6,  4,  5,  6,  5,  0,  0,
+    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  5,  6,  5,  5,  6,
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
 #endif
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
@@ -390,42 +390,103 @@ void print_generic_string(s16 x, s16 y, const u8 *str) {
             case DIALOG_CHAR_LOWER_A_GRAVE:
             case DIALOG_CHAR_LOWER_A_CIRCUMFLEX:
             case DIALOG_CHAR_LOWER_A_UMLAUT:
-                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('a'), str[strPos] & 0xF);
+                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('α'), str[strPos] & 0xF);
                 break;
             case DIALOG_CHAR_UPPER_A_UMLAUT: // @bug grave and circumflex (0x64-0x65) are absent here
-                render_uppercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('A'), str[strPos] & 0xF);
+                render_uppercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('Α'), str[strPos] & 0xF);
                 break;
             case DIALOG_CHAR_LOWER_E_GRAVE:
             case DIALOG_CHAR_LOWER_E_CIRCUMFLEX:
             case DIALOG_CHAR_LOWER_E_UMLAUT:
             case DIALOG_CHAR_LOWER_E_ACUTE:
-                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('e'), str[strPos] & 0xF);
+                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('ε'), str[strPos] & 0xF);
                 break;
             case DIALOG_CHAR_UPPER_E_GRAVE:
             case DIALOG_CHAR_UPPER_E_CIRCUMFLEX:
             case DIALOG_CHAR_UPPER_E_UMLAUT:
             case DIALOG_CHAR_UPPER_E_ACUTE:
-                render_uppercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('E'), str[strPos] & 0xF);
+                render_uppercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('Ε'), str[strPos] & 0xF);
                 break;
             case DIALOG_CHAR_LOWER_U_GRAVE:
             case DIALOG_CHAR_LOWER_U_CIRCUMFLEX:
             case DIALOG_CHAR_LOWER_U_UMLAUT:
-                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('u'), str[strPos] & 0xF);
+                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('υ'), str[strPos] & 0xF);
                 break;
             case DIALOG_CHAR_UPPER_U_UMLAUT: // @bug grave and circumflex (0x84-0x85) are absent here
-                render_uppercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('U'), str[strPos] & 0xF);
+                render_uppercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('Υ'), str[strPos] & 0xF);
                 break;
             case DIALOG_CHAR_LOWER_O_CIRCUMFLEX:
             case DIALOG_CHAR_LOWER_O_UMLAUT:
-                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('o'), str[strPos] & 0xF);
+                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('ο'), str[strPos] & 0xF);
                 break;
             case DIALOG_CHAR_UPPER_O_UMLAUT: // @bug circumflex (0x95) is absent here
-                render_uppercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('O'), str[strPos] & 0xF);
+                render_uppercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('Ο'), str[strPos] & 0xF);
                 break;
             case DIALOG_CHAR_LOWER_I_CIRCUMFLEX:
             case DIALOG_CHAR_LOWER_I_UMLAUT:
                 render_lowercase_diacritic(&xCoord, &yCoord, DIALOG_CHAR_I_NO_DIA, str[strPos] & 0xF);
                 break;
+//#elif defined(VERSION_US)
+//			case DIALOG_CHAR_UPPER_A_TONOS:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('A'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_UPPER_E_TONOS:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('E'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_UPPER_H_TONOS:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('H'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_UPPER_I_TONOS:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('I'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_UPPER_O_TONOS:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('O'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_UPPER_Y_TONOS:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('Y'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_UPPER_W_TONOS:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('V'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_LOWER_A_TONOS:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('a'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_LOWER_E_TONOS:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('e'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_LOWER_H_TONOS:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('h'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_LOWER_I_TONOS:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('i'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_LOWER_O_TONOS:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('o'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_LOWER_Y_TONOS:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('y'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_LOWER_W_TONOS:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('v'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_UPPER_I_DIALYTIKA:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('I'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_UPPER_Y_DIALYTIKA:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('Y'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_LOWER_I_DIALYTIKA:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('I'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_LOWER_I_TONOSDIALYTIKA:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('Ι'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_LOWER_Y_DIALYTIKA:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('Y'), str[strPos] & 0xF);
+//                break;
+//			case DIALOG_CHAR_LOWER_Y_TONOSDIALYTIKA:
+//                render_lowercase_diacritic(&xCoord, &yCoord, ASCII_TO_DIALOG('Υ'), str[strPos] & 0xF);
+//                break;
 #else // i.e. not EU
             case DIALOG_CHAR_DAKUTEN:
                 mark = DIALOG_MARK_DAKUTEN;
@@ -913,7 +974,7 @@ void create_dialog_box_with_response(s16 dialog) {
 }
 
 void reset_dialog_render_state(void) {
-    level_set_transition(0, NULL);
+    level_set_transition(0, 0);
 
     if (gDialogBoxType == DIALOG_TYPE_ZOOM) {
         trigger_cutscene_dialog(2);
@@ -1489,7 +1550,7 @@ void render_dialog_triangle_choice(void) {
 #define Y_VAL5_2 3
 #define X_Y_VAL6 0.5f
 #elif defined(VERSION_US)
-#define X_VAL5 118.0f
+#define X_VAL5 178.0f
 #define Y_VAL5_1 -16
 #define Y_VAL5_2 5
 #define X_Y_VAL6 0.8f
@@ -1659,7 +1720,7 @@ s8 gDialogCourseActNum = 1;
 #define DIAG_VAL4 4
 #else
 #define DIAG_VAL1 16
-#define DIAG_VAL3 132 // US & EU
+#define DIAG_VAL3 190 // US & EU
 #define DIAG_VAL4 5
 #endif
 #ifdef VERSION_EU
@@ -1760,7 +1821,7 @@ void render_dialog_entries(void) {
             break;
         case DIALOG_STATE_CLOSING:
             if (gDialogBoxOpenTimer == 20.0f) {
-                level_set_transition(0, NULL);
+                level_set_transition(0, 0);
                 play_sound(SOUND_MENU_MESSAGE_DISAPPEAR, gDefaultSoundArgs);
 
                 if (gDialogBoxType == DIALOG_TYPE_ZOOM) {
@@ -2183,10 +2244,10 @@ u8 gTextCourseArr[][7] = {
 #define LVL_NAME_X 108
 #define MYSCORE_X  48
 #else
-#define TXT_STAR_X 98
-#define ACT_NAME_X 116
+#define TXT_STAR_X 63
+#define ACT_NAME_X 81
 #define LVL_NAME_X 117
-#define MYSCORE_X  62
+#define MYSCORE_X  48
 #endif
 
 void render_pause_my_score_coins(void) {
@@ -2411,7 +2472,7 @@ void render_pause_course_options(s16 x, s16 y, s8 *index, s16 yIndex) {
 }
 
 void render_pause_castle_menu_box(s16 x, s16 y) {
-    create_dl_translation_matrix(MENU_MTX_PUSH, x - 78, y - 32, 0);
+    create_dl_translation_matrix(MENU_MTX_PUSH, x - 114, y - 32, 0);
     create_dl_scale_matrix(MENU_MTX_NOPUSH, 1.2f, 0.8f, 1.0f);
     gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, 105);
     gSPDisplayList(gDisplayListHead++, dl_draw_text_bg_box);
@@ -2608,7 +2669,7 @@ s16 render_pause_courses_and_castle(void) {
         case DIALOG_STATE_OPENING:
             gDialogLineNum = 1;
             gDialogTextAlpha = 0;
-            level_set_transition(-1, NULL);
+            level_set_transition(-1, 0);
 #if defined(VERSION_JP) || defined(VERSION_SH)
             play_sound(SOUND_MENU_PAUSE, gDefaultSoundArgs);
 #else
@@ -2639,7 +2700,7 @@ s16 render_pause_courses_and_castle(void) {
              || gPlayer3Controller->buttonPressed & START_BUTTON)
 #endif
             {
-                level_set_transition(0, NULL);
+                level_set_transition(0, 0);
                 play_sound(SOUND_MENU_PAUSE_2, gDefaultSoundArgs);
                 gDialogBoxState = DIALOG_STATE_OPENING;
                 gMenuMode = -1;
@@ -2666,7 +2727,7 @@ s16 render_pause_courses_and_castle(void) {
              || gPlayer3Controller->buttonPressed & START_BUTTON)
 #endif
             {
-                level_set_transition(0, NULL);
+                level_set_transition(0, 0);
                 play_sound(SOUND_MENU_PAUSE_2, gDefaultSoundArgs);
                 gMenuMode = -1;
                 gDialogBoxState = DIALOG_STATE_OPENING;
@@ -2757,7 +2818,7 @@ void print_hud_course_complete_coins(s16 x, s16 y) {
         gCourseCompleteCoinsEqual = 1;
         gCourseCompleteCoins = gHudDisplay.coins;
 
-        if (gGotFileCoinHiScore) {
+        if (gGotFileCoinHiScore != 0) {
             print_hud_course_complete_string(HUD_PRINT_HISCORE);
         }
     } else {
@@ -2771,7 +2832,7 @@ void print_hud_course_complete_coins(s16 x, s16 y) {
             }
         }
 
-        if (gHudDisplay.coins == gCourseCompleteCoins && gGotFileCoinHiScore) {
+        if (gHudDisplay.coins == gCourseCompleteCoins && gGotFileCoinHiScore != 0) {
             play_sound(SOUND_MENU_MARIO_CASTLE_WARP2, gDefaultSoundArgs);
         }
     }
@@ -2992,7 +3053,7 @@ s16 render_course_complete_screen(void) {
             render_course_complete_lvl_info_and_hud_str();
             if (gCourseDoneMenuTimer > 100 && gCourseCompleteCoinsEqual == 1) {
                 gDialogBoxState = DIALOG_STATE_VERTICAL;
-                level_set_transition(-1, NULL);
+                level_set_transition(-1, 0);
                 gDialogTextAlpha = 0;
                 gDialogLineNum = 1;
             }
@@ -3013,7 +3074,7 @@ s16 render_course_complete_screen(void) {
                  || gPlayer3Controller->buttonPressed & Z_TRIG
 #endif
                 )) {
-                level_set_transition(0, NULL);
+                level_set_transition(0, 0);
                 play_sound(SOUND_MENU_STAR_SOUND, gDefaultSoundArgs);
                 gDialogBoxState = DIALOG_STATE_OPENING;
                 gMenuMode = -1;

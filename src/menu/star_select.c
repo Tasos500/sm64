@@ -316,7 +316,7 @@ void print_act_selector_strings(void) {
 #ifdef VERSION_EU
         print_generic_string(95, 118, myScore[language]);
 #else
-        print_generic_string(102, 118, myScore);
+        print_generic_string(84, 118, myScore);
 #endif
     }
 

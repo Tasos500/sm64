@@ -1,77 +1,151 @@
-COURSE_ACTS(COURSE_BOB, _(" 1 BOB-OMB BATTLEFIELD"),
-       _("BIG BOB-OMB ON THE SUMMIT")     , _("FOOTRACE WITH KOOPA THE QUICK") , _("SHOOT TO THE ISLAND IN THE SKY"),
-       _("FIND THE 8 RED COINS")          , _("MARIO WINGS TO THE SKY")        , _("BEHIND CHAIN CHOMP'S GATE"))
+COURSE_ACTS(COURSE_BOB, _(" 1 ΚΟΙΛΑΔΑ ΜΠΟΜΠ-ΟΜΠ"),
+_("ΜΕΓΑΛΟ ΜΠΟΜΠ-ΟΜΠ ΠΑΝΩ ΣΤΗΝ ΚΟΡΥΦΗ"),
+_("ΑΓΩΝΑΣ ΜΕ ΤΟΝ ΚΟΥΠΑ ΤΟΝ ΤΑΧΥ"),
+_("ΒΟΛΗ ΣΤΟ ΝΗΣΙ ΣΤΟΝ ΟΥΡΑΝΟ"),
+_("ΒΡΕΣ ΤΑ 8 ΚΟΚΚΙΝΑ ΝΟΜΙΣΜΑΤΑ"),
+_("Ο ΜΑΡΙΟ ΠΕΤΑΕΙ ΣΤΟΝ ΟΥΡΑΝΟ"),
+_("ΠΙΣΩ ΑΠΟ ΤΗΝ ΠΥΛΗ ΤΟΥ ΤΣΕZΝ-ΤΣΟΜΠ"))
 
-COURSE_ACTS(COURSE_WF, _(" 2 WHOMP'S FORTRESS"),
-       _("CHIP OFF WHOMP'S BLOCK")        , _("TO THE TOP OF THE FORTRESS")    , _("SHOOT INTO THE WILD BLUE"),
-       _("RED COINS ON THE FLOATING ISLE"), _("FALL ONTO THE CAGED ISLAND")    , _("BLAST AWAY THE WALL"))
 
-COURSE_ACTS(COURSE_JRB, _(" 3 JOLLY ROGER BAY"),
-       _("PLUNDER IN THE SUNKEN SHIP")    , _("CAN THE EEL COME OUT TO PLAY?") , _("TREASURE OF THE OCEAN CAVE"),
-       _("RED COINS ON THE SHIP AFLOAT")  , _("BLAST TO THE STONE PILLAR")     , _("THROUGH THE JET STREAM"))
+COURSE_ACTS(COURSE_WF, _(" 2 ΤΟ ΦΡΟΥΡΙΟ ΤΩΝ ΓΟΥΟΜΠ"),
+_("ΚΟΜΜΑΤΙΑΣΕ ΤΟ ΛΙΘΟ ΤΟΥ ΓΟΥΟΜΠ"),
+_("ΣΤΗΝ ΚΟΡΥΦΗ ΤΟΥ ΦΡΟΥΡΙΟΥ"),
+_("ΒΟΛΗ ΣΤΟ ΓΑΛΑΝΟ ΟΥΡΑΝΟ"),
+_("ΚΟΚΚΙΝΑ ΝΟΜΙΣΜΑΤΑ ΣΤΟ ΙΠΤΑΜΕΝΟ ΝΗΣΙ"),
+_("ΠΕΣΕ ΠΑΝΩ ΣΤΟ ΝΗΣΙ ΜΕ ΤΟ ΚΛΟΥΒΙ"),
+_("ΑΝΑΤΙΝΑΞΕ ΤΟΝ ΤΟΙΧΟ"))
 
-COURSE_ACTS(COURSE_CCM, _(" 4 COOL, COOL MOUNTAIN"),
-       _("SLIP SLIDIN' AWAY")             , _("LI'L PENGUIN LOST")             , _("BIG PENGUIN RACE"),
-       _("FROSTY SLIDE FOR 8 RED COINS")  , _("SNOWMAN'S LOST HIS HEAD")       , _("WALL KICKS WILL WORK"))
 
-COURSE_ACTS(COURSE_BBH, _(" 5 BIG BOO'S HAUNT"),
-       _("GO ON A GHOST HUNT")            , _("RIDE BIG BOO'S MERRY-GO-ROUND") , _("SECRET OF THE HAUNTED BOOKS"),
-       _("SEEK THE 8 RED COINS")          , _("BIG BOO'S BALCONY")             , _("EYE TO EYE IN THE SECRET ROOM"))
+COURSE_ACTS(COURSE_JRB, _(" 3 ΠΕΙΡΑΤΙΚΗ ΑΠΟΒΑΘΡΑ"),
+_("ΛΑΦΥΡΟ ΣΤΟ ΒΥΘΙΣΜΕΝΟ ΠΛΟΙΟ"),
+_("ΝΑ ΒΓΕΙ ΤΟ ΧΕΛΙ ΕΞΩ ΝΑ ΠΑΙΞΕΙ?"),
+_("Ο ΘΗΣΑΥΡΟΣ ΤΗΣ ΣΠΗΛΙΑΣ ΤΟΥ ΩΚΕΑΝΟΥ"),
+_("ΚΟΚΚΙΝΑ ΝΟΜΙΣΜΑΤΑ ΠΑΝΩ ΣΤΟ ΠΛΟΙΟ"),
+_("ΕΚΤΟΞΕΥΣΟΥ ΣΤΟΝ ΠΕΤΡΙΝΟ ΠΥΛΩΝΑ"),
+_("ΜΕΣΑ ΑΠΟ ΤΟ ΡΕΥΜΑ ΑΕΡA"))
 
-COURSE_ACTS(COURSE_HMC, _(" 6 HAZY MAZE CAVE"),
-       _("SWIMMING BEAST IN THE CAVERN")  , _("ELEVATE FOR 8 RED COINS")       , _("METAL-HEAD MARIO CAN MOVE!"),
-       _("NAVIGATING THE TOXIC MAZE")     , _("A-MAZE-ING EMERGENCY EXIT")     , _("WATCH FOR ROLLING ROCKS"))
 
-COURSE_ACTS(COURSE_LLL, _(" 7 LETHAL LAVA LAND"),
-       _("BOIL THE BIG BULLY")            , _("BULLY THE BULLIES")             , _("8-COIN PUZZLE WITH 15 PIECES"),
-       _("RED-HOT LOG ROLLING")           , _("HOT-FOOT-IT INTO THE VOLCANO")  , _("ELEVATOR TOUR IN THE VOLCANO"))
+COURSE_ACTS(COURSE_CCM, _(" 4 ΨΥΧΡΟ, ΨΥΧΡΟ ΒΟΥΝΟ"),
+_("ΓΛΥΣΤΡΙΣΕ ΜΑΚΡΙΑ"),
+_("ΧΑΘΗΚΕ ΜΙΚΡΟΥΛΗΣ ΠΙΓΚΟΥΝΙΝΟΣ"),
+_("Ο ΑΓΩΝΑΣ ΤΟΥ ΜΕΓΑΛΟΥ ΠΙΓΚΟΥΙΝΟΥ"),
+_("ΓΛΥΣΤΡΑ ΓΙΑ 8 ΚΟΚΚΙΝΑ ΝΟΜΙΣΜΑΤΑ"),
+_("Ο ΧΙΟΝΑΝΘΡΩΠΟΣ ΕΧΑΣΕ ΤΟ ΚΕΦΑΛΙ ΤΟΥ"),
+_("ΟΙ ΤΟΙΧΟ-ΚΛΩΤΣΙΕΣ ΘΑ ΧΡΕΙΑΣΤΟΥΝ"))
 
-COURSE_ACTS(COURSE_SSL, _(" 8 SHIFTING SAND LAND"),
-       _("IN THE TALONS OF THE BIG BIRD") , _("SHINING ATOP THE PYRAMID")      , _("INSIDE THE ANCIENT PYRAMID"),
-       _("STAND TALL ON THE FOUR PILLARS"), _("FREE FLYING FOR 8 RED COINS")   , _("PYRAMID PUZZLE"))
 
-COURSE_ACTS(COURSE_DDD, _(" 9 DIRE, DIRE DOCKS"),
-       _("BOARD BOWSER'S SUB")            , _("CHESTS IN THE CURRENT")         , _("POLE-JUMPING FOR RED COINS"),
-       _("THROUGH THE JET STREAM")        , _("THE MANTA RAY'S REWARD")        , _("COLLECT THE CAPS..."))
+COURSE_ACTS(COURSE_BBH, _(" 5 Η ΕΠΑΥΛΗ ΤΩΝ ΜΠΟΥ"),
+_("ΠΑΜΕ ΓΙΑ ΚΥΝΗΓΙ ΦΑΝΤΑΣΜΑΤΩΝ"),
+_("ΣΤΟ ΚΑΡΟΥΣΕΛ ΤΟΥ ΜΕΓΑΛΟΥ ΜΠΟΥ"),
+_("ΜΥΣΤΙΚΑ ΤΩΝ ΣΤΟΙΧΙΩΜΕΝΩΝ ΒΙΒΛΙΩΝ"),
+_("ΑΝΑΖΗΤΗΣΕ ΤΑ 8 ΚΟΚΚΙΝΑ ΝΟΜΙΣΜΑΤΑ"),
+_("ΤΟ ΜΠΑΛΚΟΝΙ ΤΟΥ ΜΕΓΑΛΟΥ ΜΠΟΥ"),
+_("ΜΑΤΙ ΜΕ ΜΑΤΙ ΣΤΟ ΚΡΥΦΟ ΔΩΜΑΤΙΟ"))
 
-COURSE_ACTS(COURSE_SL, _("10 SNOWMAN'S LAND"),
-       _("SNOWMAN'S BIG HEAD")            , _("CHILL WITH THE BULLY")          , _("IN THE DEEP FREEZE"),
-       _("WHIRL FROM THE FREEZING POND")  , _("SHELL SHREDDIN' FOR RED COINS") , _("INTO THE IGLOO"))
 
-COURSE_ACTS(COURSE_WDW, _("11 WET-DRY WORLD"),
-       _("SHOCKING ARROW LIFTS!")         , _("TOP O' THE TOWN")               , _("SECRETS IN THE SHALLOWS & SKY"),
-       _("EXPRESS ELEVATOR--HURRY UP!")   , _("GO TO TOWN FOR RED COINS")      , _("QUICK RACE THROUGH DOWNTOWN!"))
+COURSE_ACTS(COURSE_HMC, _(" 6 ΣΚΟΤΕΙΝΗ ΣΠΗΛΙΑ"),
+_("ΤΟ ΘΗΡΙΟ ΠΟΥ ΚΟΛΥΜΠΑ ΣΤΟ ΣΠΗΛΑΙΟ"),
+_("ΑΝΥΨΩΣΟΥ ΓΙΑ 8 ΚΟΚΚΙΝΑ ΝΟΜΙΣΜΑΤΑ"),
+_("Ο ΜΕΤΑΛΛΟ-ΚΕΦΑΛΟΣ ΜΑΡΙΟ ΚΙΝΕΙΤΑΙ!"),
+_("ΠΕΡΑΣΜΑ ΑΠΟ ΤΟ ΤΟΞΙΚΟ ΛΑΒΥΡΙΝΘΟ"),
+_("ΛΑΒΙΡΥΝΘΟ-ΦΟΒΕΡΗ ΕΞΟΔΟΣ ΚΙΝΔΥΝΟΥ"),
+_("ΠΡΟΣΕΧΕ ΤΟΥΣ ΚΥΛΙΟΜΕΝΟΥΣ ΒΡΑΧΟΥΣ"))
 
-COURSE_ACTS(COURSE_TTM, _("12 TALL, TALL MOUNTAIN"),
-       _("SCALE THE MOUNTAIN")            , _("MYSTERY OF THE MONKEY CAGE")    , _("SCARY 'SHROOMS, RED COINS"),
-       _("MYSTERIOUS MOUNTAINSIDE")       , _("BREATHTAKING VIEW FROM BRIDGE") , _("BLAST TO THE LONELY MUSHROOM"))
 
-COURSE_ACTS(COURSE_THI, _("13 TINY-HUGE ISLAND"),
-       _("PLUCK THE PIRANHA FLOWER")      , _("THE TIP TOP OF THE HUGE ISLAND"), _("REMATCH WITH KOOPA THE QUICK"),
-       _("FIVE ITTY BITTY SECRETS")       , _("WIGGLER'S RED COINS")           , _("MAKE WIGGLER SQUIRM"))
+COURSE_ACTS(COURSE_LLL, _(" 7 ΧΩΡΑ ΤΗΣ ΛΑΒΑΣ"),
+_("ΒΡΑΣΕ ΤΟ ΜΕΓΑΛΟ ΜΠΟΥΛΗ"),
+_("ΦΟΒΕΡΙΣΕ ΣΤΟΥΣ ΜΠΟΥΛΗΔΕΣ"),
+_("8 ΝΟΜΙΣΜΑΤΑ ΣΕ ΠΑΖΛ 15 ΚΟΜΜΑΤΙΩΝ"),
+_("ΚΟΚΚΙΝΟ-ΚΑΥΤΟ ΣΤΡΙΦΟΓΥΡΙΣΜΑ ΚΟΥΤΣΟΥΡΟΥ"),
+_("ΤΣΟΥΡΟΥΦΛΙΣΜΑ ΠΟΔΙΩΝ ΜΕΣΑ ΣΤΟ ΗΦΑΙΣΤΕΙΟ"),
+_("ΒΟΛΤΑ ΜΕ ΤΟΝ ΑΝΕΛΚΥΣΤΗΡΑ ΜΕΣ ΤΟ ΗΦΑΙΣΤΕΙΟ"))
 
-COURSE_ACTS(COURSE_TTC, _("14 TICK TOCK CLOCK"),
-       _("ROLL INTO THE CAGE")            , _("THE PIT AND THE PENDULUMS")     , _("GET A HAND"),
-       _("STOMP ON THE THWOMP")           , _("TIMED JUMPS ON MOVING BARS")    , _("STOP TIME FOR RED COINS"))
 
-COURSE_ACTS(COURSE_RR, _("15 RAINBOW RIDE"),
-       _("CRUISER CROSSING THE RAINBOW")  , _("THE BIG HOUSE IN THE SKY")      , _("COINS AMASSED IN A MAZE"),
-       _("SWINGIN' IN THE BREEZE")        , _("TRICKY TRIANGLES!")             , _("SOMEWHERE OVER THE RAINBOW"))
+COURSE_ACTS(COURSE_SSL, _(" 8 ΧΩΡΑ ΤΗΣ ΕΡΗΜΟΥ"),
+_("ΣΤΑ ΝΥΧΙΑ ΤΟΥ ΜΕΓΑΛΟΥ ΠΤΗΝΟΥ"),
+_("ΛΑΜΠΨΗ ΣΤΗ ΚΟΡΥΦΗ ΤΗΣ ΠΥΡΑΜΙΔΑΣ"),
+_("ΜΕΣΑ ΣΤΗΝ ΑΡΧΑΙΑ ΠΥΡΑΜΙΔΑ"),
+_("ΣΤΑΣΟΥ ΣΤΟ ΥΨΟΣ ΣΟΥ ΣΤΟΥΣ 4 ΠΥΛΩΝΕΣ"),
+_("ΕΛΕΥΘΕΡΗ ΠΤΗΣΗ ΓΙΑ 8 ΚΟΚΚΙΝΑ ΝΟΜΙΣΜΑΤΑ"),
+_("ΠΑΖΛ ΠΥΡΑΜΙΔΑΣ"))
 
-SECRET_STAR(COURSE_BITDW, _("   BOWSER IN THE DARK WORLD"))
-SECRET_STAR(COURSE_BITFS, _("   BOWSER IN THE FIRE SEA"))
-SECRET_STAR(COURSE_BITS, _("   BOWSER IN THE SKY"))
-SECRET_STAR(COURSE_PSS, _("   THE PRINCESS'S SECRET SLIDE"))
-SECRET_STAR(COURSE_COTMC, _("   CAVERN OF THE METAL CAP"))
-SECRET_STAR(COURSE_TOTWC, _("   TOWER OF THE WING CAP"))
-SECRET_STAR(COURSE_VCUTM, _("   VANISH CAP UNDER THE MOAT"))
-SECRET_STAR(COURSE_WMOTR, _("   WING MARIO OVER THE RAINBOW"))
-SECRET_STAR(COURSE_SA, _("   THE SECRET AQUARIUM"))
+
+COURSE_ACTS(COURSE_DDD, _(" 9 ΤΡΟΜΕΡΟΣ ΜΟΛΟΣ"),
+_("ΣΤΟ ΥΠΟΒΡΥΧΙΟ ΤΟΥ ΜΠΑΟΥΖΕΡ"),
+_("ΜΠΑΟΥΛΑ ΜΕΣΑ ΣΤΟ ΡΕΥΜΑ"),
+_("ΣΤΟΥΣ ΠΑΣΣΑΛΟΥΣ ΓΙΑ 8 ΚΟΚΚΙΝΑ ΝΟΜΙΣΜΑΤΑ"),
+_("ΜΕΣΑ ΣΤΟ ΡΕΥΜΑ ΤΟΥ ΑΕΡΑ"),
+_("Η ΑΝΑΤΑΜΟΙΒΗ ΑΠΟ ΤΟ ΣΑΛΑΧΙ ΜΑΝΤΑ"),
+_("ΦΟΡΕΣΕ ΤΑ ΚΑΠΕΛΑ..."))
+
+
+COURSE_ACTS(COURSE_SL, _("10 ΧΩΡΑ ΤΟΥ ΧΙΟΝΑΝΘΡΩΠΟΥ"),
+_("ΤΟ ΜΕΓΑΛΟ ΚΕΦΑΛΙ ΤΟΥ ΧΙΟΝΑΝΘΡΩΠΟΥ"),
+_("ΠΑΓΩΣΕ ΤΟ ΜΠΟΥΛΗ"),
+_("ΜΕΣΑ ΣΤΟ ΒΑΘΥ ΨΥΧΟΣ"),
+_("ΣΤΡΟΒΙΛΙΣΟΥ ΜΕΣΑ ΑΠΟ ΤΗ ΛΙΜΝΟΥΛΑ"),
+_("ΚΑΒΟΥΚΙ ΣΕΡΦ ΓΙΑ ΤΑ ΚΟΚΚΙΝΑ ΝΟΜΙΣΜΑΤΑ"),
+_("ΜΕΣΑ ΣΤΟ ΙΓΚΛΟΥ"))
+
+
+COURSE_ACTS(COURSE_WDW, _("11 ΥΓΡΟΣ-ΣΤΕΓΝΟΣ ΚΟΣΜΟΣ"),
+_("ΗΛΕΚΤΡΟΦΟΡΑ ΒΕΛΑΚΙΑ!"),
+_("ΣΤΗ ΚΟΡΥΦΗ ΤΗΣ ΠΟΛΗΣ"),
+_("ΜΥΣΤΙΚΑ ΣΤΑ ΡΗΧΑ & ΣΤΟΝ ΟΥΡΑΝΟ"),
+_("ΑΝΣΑΣΕΡ ΕΞΠΡΕΣ--ΤΡΕΧΑ!"),
+_("ΠΗΓΑΙΝΕ ΣΤΗ ΠΟΛΗ ΓΙΑ ΤΑ ΚΟΚΚΙΝΑ ΝΟΜΙΣΜΑΤΑ"),
+_("ΓΡΗΓΟΡΟΣ ΑΓΩΝΑΣ ΜΕΣ ΤΟ ΚΕΝΤΡΟ ΤΗΣ ΠΟΛΗΣ"))
+
+
+COURSE_ACTS(COURSE_TTM, _("12 ΨΗΛΟ, ΨΗΛΟ ΒΟΥΝΟ"),
+_("ΑΝΕΒΑ ΤΟ ΒΟΥΝΟ"),
+_("ΤΟ ΜΥΣΤΗΡΙΟ ΣΤΟ ΚΛΟΥΒΙ ΤΗΣ ΜΑZΜΟΥΣ"),
+_("ΤΡΟΜΑΚΤΙΚΑ ΜΑΝΙΤΑΡΙΑ, ΚΟΚΚΙΝΑ ΝΟΜΙΣΜΑΤΑ"),
+_("ΜΥΣΤΗΡΙΩΔΗΣ ΒΟΥΝΟΠΛΑΓΙΑ"),
+_("ΓΕΦΥΡΑ ΜΕ ΘΕΑ ΠΟΥ ΣΟΥ ΚΟΒΕΙ ΤΗΝ ΑΝΑΣΑ"),
+_("ΕΚΤΟΞΕΥΣΟΥ ΣΤΟ ΜΟΝΑΧΙΚΟ ΜΑΝΙΤΑΡΙ"))
+
+
+COURSE_ACTS(COURSE_THI, _("13 ΜΙΚΡΟ-ΜΕΓΑΛΟ ΝΗΣΙ"),
+_("ΚΟΨΕ ΤΟ ΛΟΥΛΟΥΔΙ ΠΙΡΑΝΧΑΣ"),
+_("Η ΚΟΡΥΦΗ ΤΟΥ ΜΕΓΑΛΟΥ ΝΗΣΙΟΥ"),
+_("ΞΑΝΑΤΡΕΞΕ ΜΕ ΤΟΝ ΚΟΥΠΑ ΤΟΝ ΤΑΧΥ"),
+_("ΠΕΝΤΕ ΜΙΚΡΑ ΜΙΚΡΑ ΜΥΣΤΙΚΑ"),
+_("ΤΑ ΚΟΚΚΙΝΑ ΝΟΜΙΣΜΑΤΑ ΤΟΥ ΓΟΥΙΓΛΕΡ"),
+_("ΚΑΝΕ ΤΟ ΓΟΥΙΓΚΛΕΡ ΑΝΗΣΥΧΟ"))
+
+
+COURSE_ACTS(COURSE_TTC, _("14 ΡΟΛΟZ ΤΙΚ ΤΟΚ"),
+_("ΚΥΛΗΣΕ ΜΕΣ ΤΟ ΚΛΟΥΒΙ"),
+_("ΤΟ ΚΕΝΟ ΚΑΙ ΤΑ ΕΚΚΡΕΜΗ"),
+_("ΑΝΕΒΑ ΣΤΟΝ ΔΕΙΚΤΗ"),
+_("ΠΑΤΑ ΠΑΝΩ ΣΤΟ ΘΟΥΟΜΠ"),
+_("ΣΥΓΧΡΟΝΙΣΜΕΝΑ ΠΗΔΗΜΑΤΑ ΣΕ ΚΙΝΟΥΜΕΝΕΣ ΜΠΑΡΕΣ"),
+_("ΣΤΑΜΑΤΗΣΕ ΤΟ ΧΡΟΝΟ ΓΙΑ ΤΑ ΚΟΚΚΙΝΑ ΝΟΜΙΣΜΑΤΑ"))
+
+
+COURSE_ACTS(COURSE_RR, _("15 ΒΟΛΤΑ ΣΤΟ ΟΥΡΑΝΙΟ ΤΟΞΟ"),
+_("ΚΟΥΡΣΑ ΠΑΝΩ ΣΤΟ ΟΥΡΑΝΙΟ ΤΟΞΟ"),
+_("ΤΟ ΜΕΓΑΛΟ ΣΠΙΤΙ ΣΤΟΝ ΟΥΡΑΝΟ"),
+_("ΝΟΜΙΣΜΑΤΑ ΜΑΖΕΜΕΝΑ ΣΤΟ ΛΑΒΥΡΙΝΘΟ"),
+_("ΚΟΥΝΙΑ ΣΤΟ ΑΕΡΑΚΙ"),
+_("ΖΟΡΙΚΑ ΤΡΙΓΩΝΑ!"),
+_("ΚΑΠΟΥ ΠΑΝΩ ΑΠΟ ΤΟ ΟΥΡΑΝΙΟ ΤΟΞΟ"))
+
+SECRET_STAR(COURSE_BITDW, _("   Ο ΜΠΑΟΥΖΕΡ ΣΤΟ ΣΚΟΤΕΙΝΟ ΚΟΣΜΟ"))
+SECRET_STAR(COURSE_BITFS, _("   Ο ΜΠΑΟΥΖΕΡ ΣΤΗΝ ΠΥΡΙΝΗ ΘΑΛΑΣΣΑ"))
+SECRET_STAR(COURSE_BITS, _("   Ο ΜΠΑΟΥΖΕΡ ΣΤΟΝ ΟΥΡΑΝΟ"))
+SECRET_STAR(COURSE_PSS, _("   Η ΜΥΣΤΙΚΗ ΤΣΟΥΛΗΘΡΑ ΤΗΣ ΠΡΙΓΚΙΠΙΣΣΑΣ"))
+SECRET_STAR(COURSE_COTMC, _("   ΣΠΗΛΙΑ ΤΟΥ ΜΕΤΑΛΛΙΚΟΥ ΚΑΠΕΛΟΥ"))
+SECRET_STAR(COURSE_TOTWC, _("   ΠΥΡΓΟΣ ΤΟΥ ΦΤΕΡΩΤΟΥ ΚΑΠΕΛΟΥ"))
+SECRET_STAR(COURSE_VCUTM, _("   ΑΟΡΑΤΟ ΚΑΠΕΛΟ ΚΑΤΩ ΑΠΟ ΤΟΝ ΛΑΚΚΟ"))
+SECRET_STAR(COURSE_WMOTR, _("   ΦΤΕΡΩΤΟΣ ΜΑΡΙΟ ΠΑΝΩ ΑΠΟ ΤΟ ΟΥΡΑΝΙΟ ΤΟΞΟ"))
+SECRET_STAR(COURSE_SA, _("   ΤΟ ΜΥΣΤΙΚΟ ΕΝΥΔΡΕΙΟ"))
 SECRET_STAR(COURSE_CAKE_END, _(""))
 
-CASTLE_SECRET_STARS(_("   CASTLE SECRET STARS"))
+CASTLE_SECRET_STARS(_("ΚΡΥΦΑ ΑΣΤΕΡΙΑ ΚΑΣΤΡΟΥ"))
 
-EXTRA_TEXT(0, _("ONE OF THE CASTLE'S SECRET STARS!"))
+EXTRA_TEXT(0, _("ΕΝΑ ΑΠΟ ΤΑ ΚΡΥΦΑ ΑΣΤΕΡΙΑ ΤΟΥ ΚΑΣΤΡΟΥ!"))
 EXTRA_TEXT(1, _(""))
 EXTRA_TEXT(2, _(""))
 EXTRA_TEXT(3, _(""))

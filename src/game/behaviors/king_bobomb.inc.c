@@ -22,8 +22,8 @@ void bhv_bobomb_anchor_mario_loop(void) {
 
 void king_bobomb_act_0(void) {
 #ifndef VERSION_JP
-    o->oForwardVel = 0.0f;
-    o->oVelY = 0.0f;
+    o->oForwardVel = 0;
+    o->oVelY = 0;
 #endif
     if (o->oSubAction == 0) {
         cur_obj_become_intangible();
@@ -41,12 +41,11 @@ void king_bobomb_act_0(void) {
     }
 }
 
-s32 mario_is_far_below_object(f32 arg0) {
-    if (arg0 < o->oPosY - gMarioObject->oPosY) {
-        return TRUE;
-    } else {
-        return FALSE;
-    }
+int mario_is_far_below_object(f32 arg0) {
+    if (arg0 < o->oPosY - gMarioObject->oPosY)
+        return 1;
+    else
+        return 0;
 }
 
 void king_bobomb_act_2(void) {

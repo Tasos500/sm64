@@ -38,7 +38,7 @@ static s16 gameOverNotPlayed = 1;
 
 // don't shift this function from being the first function in the segment.
 // the level scripts assume this function is the first, so it cant be moved.
-s32 run_press_start_demo_timer(s32 timer) {
+int run_press_start_demo_timer(s32 timer) {
     gCurrDemoInput = NULL;
 
     if (timer == 0) {
@@ -125,7 +125,7 @@ s16 level_select_input_loop(void) {
         // ... the level select quit combo is being pressed, which uses START. If this
         // is the case, quit the menu instead.
         if (gPlayer1Controller->buttonDown == QUIT_LEVEL_SELECT_COMBO) {
-            gDebugLevelSelect = FALSE;
+            gDebugLevelSelect = 0;
             return -1;
         }
         play_sound(SOUND_MENU_STAR_SOUND, gDefaultSoundArgs);
@@ -134,7 +134,7 @@ s16 level_select_input_loop(void) {
     return 0;
 }
 
-s32 intro_default(void) {
+int intro_default(void) {
     s32 sp1C = 0;
 
 #ifndef VERSION_JP
@@ -150,16 +150,19 @@ s32 intro_default(void) {
     print_intro_text();
 
     if (gPlayer1Controller->buttonPressed & START_BUTTON) {
+#ifdef VERSION_JP
         play_sound(SOUND_MENU_STAR_SOUND, gDefaultSoundArgs);
         sp1C = 100 + gDebugLevelSelect;
-#ifndef VERSION_JP
+#else
+        play_sound(SOUND_MENU_STAR_SOUND, gDefaultSoundArgs);
+        sp1C = 100 + gDebugLevelSelect;
         D_U_801A7C34 = 1;
 #endif
     }
     return run_press_start_demo_timer(sp1C);
 }
 
-s32 intro_game_over(void) {
+int intro_game_over(void) {
     s32 sp1C = 0;
 
 #ifndef VERSION_JP
@@ -181,7 +184,7 @@ s32 intro_game_over(void) {
     return run_press_start_demo_timer(sp1C);
 }
 
-s32 intro_play_its_a_me_mario(void) {
+int intro_play_its_a_me_mario(void) {
     set_background_music(0, SEQ_SOUND_PLAYER, 0);
     play_sound(SOUND_MENU_COIN_ITS_A_ME_MARIO, gDefaultSoundArgs);
     return 1;

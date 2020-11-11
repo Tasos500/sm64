@@ -1,7 +1,7 @@
 // whomp.c.inc
 
 void whomp_play_sfx_from_pound_animation(void) {
-    UNUSED s32 sp2C = o->header.gfx.animInfo.animFrame;
+    UNUSED s32 sp2C = o->header.gfx.unk38.animFrame;
     s32 sp28 = 0;
     if (o->oForwardVel < 5.0f) {
         sp28 = cur_obj_check_anim_frame(0);
